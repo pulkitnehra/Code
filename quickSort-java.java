@@ -71,12 +71,8 @@ public class quickSort {
 			{
 				quicksort(arr,i,right);
 			}
-		
 		}
-		
-	
 	
 	}
 	
-
 }
