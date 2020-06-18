@@ -14,13 +14,10 @@ public class MergeSort {
 		{  
 		    System.out.print(arr[i]+" ");  
 		}  
-			
-		
-
 	}
   
 	static void mergeS(int Arr[], int start, int mid, int end) {
-
+	/*Method 1*/
 	// create a temp array
 	int temp[] = new int[end - start + 1];
 
@@ -71,7 +68,72 @@ public class MergeSort {
 			//merge the two subarrays
 			mergeS(arr,beg,mid,end);
 		}
-	}	
+	}
+	
+		----------------/*Method 2*/----------
+	static void merge(int arr[], int beg, int mid, int end)
+    	{
+        int l = mid-beg+1;
+		int r = end-mid;
+		
+		//create and initialize the left and right subarrays 
+		int leftArr[] = new int[l];
+		int rightArr[] = new int[r];
+		
+		//traverse and insert the elements os the original array into the left and right subarrays respectively
+		//inserting elements in the left subarray
+		for(int i = 0; i<l; i++)
+		{
+			leftArr[i] = arr[beg+i];//uptill left subarray from beg
+		}
+		
+		//inserting elements in the right subarray
+		for(int j = 0; j<r; j++)
+		{
+			rightArr[j] = arr[mid+1+j];//uptill end from mid + 1
+		}
+		
+		//traverse the left and right subarrays and then sort and merge the sorted array
+		int i = 0; int j = 0; int k = beg;
+		
+		while(i<l && j<r)
+		{
+			//check if smaller element is present in left subarray
+			if(leftArr[i] <= rightArr[j])
+			{
+				arr[k] = leftArr[i];
+				i++;
+			}
+			//check if smaller element is present in the right subarray
+			else
+			{
+				arr[k] = rightArr[j];
+				j++;
+			}
+			k++;
+		}
+		
+		//after the end of above loop there can still be elements either in the left or the right subarrays
+		//so to combat these conditions we do
+		while(i<l) {
+			arr[k] = leftArr[i];
+			i++;
+			k++;
+		}
+		
+		while(j<r) {
+			arr[k] = rightArr[j];
+			j++;
+			k++;
+		}
+    }
+}
+
+
+
+
+
+
 
 
 }
