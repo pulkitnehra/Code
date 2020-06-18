@@ -126,14 +126,6 @@ public class MergeSort {
 			j++;
 			k++;
 		}
-    }
-}
-
-
-
-
-
-
-
-
+    	}
+   }
 }
