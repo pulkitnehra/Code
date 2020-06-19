@@ -1,7 +1,9 @@
 def mergeSort(myList):
     if len(myList) > 1:
         mid = len(myList) // 2
+        # taking the left subarray upto mid
         left = myList[:mid]
+        #taking the right subarray from mid + 1
         right = myList[mid:]
 
         # Recursive call on each half
