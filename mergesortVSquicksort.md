@@ -14,9 +14,9 @@ Why?
 
 The two main criteria to judge which sorting algorithm is better than the other have been:
 
-Time taken to sort the given data.
+1.Time taken to sort the given data.
 
-Memory Space required to do so
+2.Memory Space required to do so
 
 
 
