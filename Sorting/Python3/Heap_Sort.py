@@ -26,7 +26,7 @@ def sort(array):
         # all the elements are perfectly sorted
         heapify(array, j, 0)
 
-
+# to maintain the max-heap structure
 def heapify(array, n, root_idx):
     largest = root_idx
     # left child
